@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office"
+	xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+	<title>Detalhes do diciplina</title>
+
+
+</head>
+
+<body>
+	<nav class="navbar navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">diciplinas</a>
+		</div>
+	</nav>
+
+	<main class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>Detalhes da diciplina</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card">
+					<h5 class="card-header" th:text="${diciplina.nomeDisciplina}"></h5>
+					<div class="card-body">
+						<p>
+							Nome da Disciplina: <span th:text="${diciplina.nomeDiciplina}"></span>
+						</p>
+						<p>
+							Ano da Disciplina: <span th:text="${diciplina.anoDiciplina}"></span>
+						</p>
+
+						<!--<a href="" class="btn btn-warning"><i class="bi bi-pen"></i></a>
+            <a href="" class="btn btn-danger"><i class="bi bi-trash"></i></a>-->
+						<a th:href="@{/diciplina/{id}/editar (id=${diciplina.idDiciplina})}" class="btn btn-warning">Editar</a>
+						<a th:href="@{/diciplina/{id}/excluir (id=${diciplina.id})}" class="btn btn-danger"
+							onclick="return confirm('Tem certeza que deseja excluir a diciplina?');">
+							Excluir
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
