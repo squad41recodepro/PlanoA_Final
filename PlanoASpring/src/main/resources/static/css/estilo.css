@@ -1,0 +1,194 @@
+/* classes de bg-color segundo a palheta escolhida, todas as 5 cores respectivas */
+.BGAzulBB {
+    background-color: #8ECAE6;
+}
+.BGAzul {
+    background-color: #219EBC;
+}
+.BGMarinho {
+    background-color: #023047;
+}
+.BGAmarelo {
+    background-color: #FFB703;
+}
+.BGLaranja {
+    background-color: #FB8500;
+}
+
+/* ID's de background segundo necessidade de sobreposição*/
+#BGAzulBB {
+    background-color: #8ECAE6;
+}
+#BGLaranja {
+color: black;
+    background-color: #FB8500;
+}
+#bgBK {
+    background-color: #000;
+}
+#bgWH {
+    background-color: #fff;
+}
+/* classes de foreground */
+.textoBranco {
+    color: #fff;
+}
+.textoNeutroCinza {
+    color: #555;
+}
+.textoAzulBB {
+    color: #8ECAE6;
+}
+.textoAzul {
+    color: #219EBC;
+}
+.textoMarinho {
+    color: #023047;
+}
+.textoAmarelo {
+    color: #FFB703;
+}
+.textoLaranja {
+    color: #FB8500;
+}
+
+/* Textos do carousel */
+#item-carousel-titulo {
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 1.2em;
+}
+#item-carousel-paragrafo {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight:639;
+    font-style: italic;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.carousel-caption-amarelo {
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    padding-top: 1.50rem;
+    padding-right: .75rem;
+    padding-left: .75rem;
+    padding-bottom: 1.0rem;
+    /* color: #fff; */
+    background-color: #ffb8035b;
+    text-align: center;
+    border-radius: 3.9rem; 
+} /* propriedades da área de legendas do caroussel */
+.carousel-caption-azul {
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    padding-top: 1.50rem;
+    padding-right: .75rem;
+    padding-left: .75rem;
+    padding-bottom: 1.0rem;
+    /* color: #fff; */
+    background-color: #02304784;
+    text-align: center;
+    border-radius: 3.9rem;
+} /* propriedades da área de legendas do caroussel */
+.carousel-caption-azulBB {
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    padding-top: 1.50rem;
+    padding-right: .75rem;
+    padding-left: .75rem;
+    padding-bottom: 1.0rem;
+    /* color: #fff; */
+    background-color: #8ecae673;
+    text-align: center;
+    border-radius: 3.9rem;
+}
+
+.container-radius {
+    border-radius: 1rem;
+} /* Mais arredondamento de container para dar visual mais amigável */
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+} /* Com isso, carousel totalmente responsivo, adaptado e com padding zerado! */
+
+#btn-Marinho {
+    background-color: #023047;
+} /* Botões "azulMarinho" */
+
+/* Cards da página planosDeAula */
+#card-container {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.card {
+    --bs-card-spacer-y: .25rem;
+    --bs-card-spacer-x: .25rem;
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-border-width: 10px;
+    --bs-card-border-color: #FB8500;/* var(--bs-border-color-translucent); */
+    --bs-card-border-radius: 0.375rem;
+    --bs-card-box-shadow: ;
+    --bs-card-inner-border-radius: calc(0.375rem - 1px);
+    --bs-card-cap-padding-y: 0.5rem;
+    --bs-card-cap-padding-x: 1rem;
+    --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
+    --bs-card-cap-color: ;
+    --bs-card-height: ;
+    --bs-card-color: ;
+    --bs-card-bg: #FFB703;
+    --bs-card-img-overlay-padding: 1rem;
+    --bs-card-group-margin: 0.75rem;
+    position: relative;
+    display:inline-flex; /* Favor manter conforme alterado */
+    grid-row: span;
+    flex-direction:column;
+    height: var(--bs-card-height);
+    word-wrap: break-word;
+    background-color: var(--bs-card-bg);
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-radius: var(--bs-card-border-radius);
+    /* inserido */
+    min-width: 21rem;
+    max-width: 36rem;
+    margin: 1rem;
+  }
+  .col {
+    flex: 1 0 0%; 
+  }
+  .row { 
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+   /* margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x)); */
+    margin: 1rem 0 1rem 0;
+    padding: 0 0 0 0;
+  }
