@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel='stylesheet' type='text/css' media='screen' href='estilo.css'>
+  <link rel="stylesheet" th:href="@{/css/estilo.css}">
 
 </head>
 
@@ -35,13 +35,13 @@
       </a>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 fs-5">
-        <li><a class="navbar-brand" href="./index.html"><img src="imagens/logoClaro_152x72.png" alt="logo plano A"></a>
+        <li><a class="navbar-brand" th:href="@{/index}"><img th:src="@{img/logoClaro_152x72.png}" alt="logo plano A"></a>
         </li>
-        <li><a href="./index.html" class="nav-link px-3 text-white">Home</a></li>
-        <li><a href="./planosDeAula.html" class="nav-link px-3 text-white">Planos de Aula</a></li>
-        <li><a href="./perguntasFrequentes.html" class="nav-link px-3 text-white">Perguntas Frequentes</a></li>
-        <li><a href="./sobreNos.html" class="nav-link px-3 text-white">Sobre Nós</a></li>
-        <li><a href="./contato.html" class="nav-link px-3 text-white">Contato</a></li>
+        <li><a th:href="@{/index}" class="nav-link px-3 text-white">Home</a></li>
+        <li><a th:href="@{/planosdeaula}" class="nav-link px-3 text-white">Planos de Aula</a></li>
+        <li><a th:href="@{/perguntasfrequentes}" class="nav-link px-3 text-white">Perguntas Frequentes</a></li>
+        <li><a th:href="@{/sobrenos}" class="nav-link px-3 text-white">Sobre Nós</a></li>
+        <li><a th:href="@{/contato}" class="nav-link px-3 text-white">Contato</a></li>
         <li>
           <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
             <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
@@ -49,7 +49,7 @@
         </li>
         <li>
           <button type="button" class="btn" id="BGLaranja">Login</button>
-          <button type="button" class="btn" id="BGAzulBB">Sign-up</button>
+          <a th:href="@{/professor}"  class="btn" id="BGAzulBB">Sign-up</a></P>
         </li>
       </ul>
     </div>
@@ -68,7 +68,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <div class="carousel-item active">
-            <img src="./imagens/index/graduacao_1366x768.jpg" alt="First slide">
+            <img th:src="@{img/index/graduacao_1366x768.jpg}" alt="First slide">
             <div class="carousel-caption-amarelo">
               <h5 id="item-carousel-titulo" class="textoBranco"><strong>Eleve suas turmas a outro patamar!</strong></h5>
               <p id="item-carousel-paragrafo" class="textoBranco"><em>Seja responsável pelo sucesso e sinta orgulho
@@ -76,7 +76,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img src="./imagens/index/cadernos_1366x768.jpg" alt="Second slide">
+            <img th:src="@{img/index/cadernos_1366x768.jpg}" alt="Second slide">
             <div class="carousel-caption-azulBB d-md-inline-block">
               <h5 id="item-carousel-titulo" class="textoMarinho"><strong>Testemunhe um maior rendimento em sala de
                   aula!</strong></h5>
@@ -85,7 +85,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img src="./imagens/index/teacher-zhu_1366x768.jpg" alt="Third slide">
+            <img th:src="@{img/index/teacher-zhu_1366x768.jpg}" alt="Third slide">
             <div class="carousel-caption-azul">
               <h5 id="item-carousel-titulo" class="textoAmarelo"><strong>De professores para professores!</strong></h5>
               <p id="item-carousel-paragrafo" class="textoAmarelo"><em>Colabore, crie, comente, aperfeiçoe, incentive e
