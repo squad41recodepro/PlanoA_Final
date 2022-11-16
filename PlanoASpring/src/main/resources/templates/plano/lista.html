@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+	<title>Listagem de Planos</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Planos</a>
+		</div>
+	</nav>
+
+	<main class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>Listagem de Planoes</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Nome</th>
+							<th scope="col">Miniatura</th>
+							<th scope="col">Diciplina</th>
+							<th scope="col">Professor</th>
+							<th scope="col">Ver Plano</th>
+							<th scope="col">Ações</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="plano : ${planos}">
+							<th scope="row" th:text="${plano.idPlano}"></th>
+							<td th:text="${plano.nomePlano}"></td>											
+							<td>
+								<img alt="Image" class="img_prod" height="50px" width="70px"
+									th:src="|/plano/imagem/${plano.idPlano}|" />
+							</td>
+							<td th:text="${plano.diciplina.nomeDiciplina}"></td>
+							<td th:text="${plano.professor.nomeProfessor}"></td>
+							<td>
+								<a th:href="@{/plano/{id} (id=${plano.idPlano})}">Visualizar Plano</a><!--Link para detalhar plano-->
+							</td>
+							<td>
+								<a th:href="@{/plano/{id}/editar (id=${plano.idPlano})}"
+									class="btn btn-warning">Editar</a>
+								<a th:href="@{/plano/{id}/excluir (id=${plano.idPlano})}" class="btn btn-danger"
+									onclick="return confirm('Tem certeza que deseja excluir o plano?');">
+									Excluir
+								</a>
+
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<a th:href="@{/plano/cadastrar}" class="btn btn-primary">Cadastrar novo Plano</a>
+			</div>
+		</div>
+	</main>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
