@@ -26,8 +26,8 @@ public class Plano {
 	private String nomePlano;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "idDiciplina", nullable = false)
-   	private Diciplina diciplina;
+    @JoinColumn(name = "idDisciplina", nullable = false)
+   	private Disciplina disciplina;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "idProfessor", nullable = false)
@@ -38,11 +38,11 @@ public class Plano {
 
 	public Plano() {}
 	
-	public Plano(Long idPlano, String nomePlano, Diciplina diciplina, Professor professor) {
+	public Plano(Long idPlano, String nomePlano, Disciplina disciplina, Professor professor) {
 		super();
 		this.idPlano = idPlano;
 		this.nomePlano = nomePlano;
-		this.diciplina = diciplina;
+		this.disciplina = disciplina;
 		this.professor = professor;
 	}
 
@@ -62,12 +62,12 @@ public class Plano {
 		this.nomePlano = nomePlano;
 	}
 
-	public Diciplina getDiciplina() {
-		return diciplina;
+	public Disciplina getDisciplina() {
+		return disciplina;
 	}
 
-	public void setDiciplina(Diciplina diciplina) {
-		this.diciplina = diciplina;
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
 	}
 
 	public Professor getProfessor() {
@@ -91,7 +91,7 @@ public class Plano {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + Arrays.hashCode(imagem);
-		result = prime * result + Objects.hash(diciplina, idPlano, nomePlano, professor);
+		result = prime * result + Objects.hash(disciplina, idPlano, nomePlano, professor);
 		return result;
 	}
 
@@ -104,7 +104,7 @@ public class Plano {
 		if (getClass() != obj.getClass())
 			return false;
 		Plano other = (Plano) obj;
-		return Objects.equals(diciplina, other.diciplina) && Objects.equals(idPlano, other.idPlano)
+		return Objects.equals(disciplina, other.disciplina) && Objects.equals(idPlano, other.idPlano)
 				&& Arrays.equals(imagem, other.imagem) && Objects.equals(nomePlano, other.nomePlano)
 				&& Objects.equals(professor, other.professor);
 	}

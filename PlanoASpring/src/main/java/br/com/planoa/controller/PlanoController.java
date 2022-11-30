@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.planoa.model.Plano;
-import br.com.planoa.repository.DiciplinaRepository;
+import br.com.planoa.repository.DisciplinaRepository;
 import br.com.planoa.repository.PlanoRepository;
 import br.com.planoa.repository.ProfessorRepository;
 
@@ -29,7 +29,7 @@ public class PlanoController {
 	private PlanoRepository planoRepository;
 	
     @Autowired
-    private DiciplinaRepository diciplinaRepository;
+    private DisciplinaRepository disciplinaRepository;
     
     @Autowired
     private ProfessorRepository professorRepository;
@@ -52,7 +52,7 @@ public class PlanoController {
 	public ModelAndView cadastrar() {
 		ModelAndView modelAndView = new ModelAndView("plano/cadastro.html");
 		modelAndView.addObject("plano", new Plano());
-        modelAndView.addObject("diciplina", diciplinaRepository.findAll());
+        modelAndView.addObject("disciplina", disciplinaRepository.findAll());
         modelAndView.addObject("professor", professorRepository.findAll());
 
 		return modelAndView;
@@ -110,10 +110,9 @@ public class PlanoController {
 	public ModelAndView editar(@PathVariable Long id) {
 		ModelAndView modelAndView = new ModelAndView("plano/edicao");
 
-		//Plano plano = planoRepository.getReferenceById(id);
-		//modelAndView.addObject("plano", plano);
-		modelAndView.addObject("plano", new Plano());
-        modelAndView.addObject("diciplina", diciplinaRepository.findAll());
+		Plano plano = planoRepository.getReferenceById(id);
+		modelAndView.addObject("plano", plano);
+        modelAndView.addObject("disciplina", disciplinaRepository.findAll());
         modelAndView.addObject("professor", professorRepository.findAll());
 
 		return modelAndView;
