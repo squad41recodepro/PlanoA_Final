@@ -1,0 +1,30 @@
+/* Físico_PlanoA: */
+
+CREATE DATABASE PLANOA;
+
+USE PLANOA;
+
+CREATE TABLE PROFESSOR (
+    IdProfessor INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(50),
+    CPF VARCHAR(11) UNIQUE,
+    formacao VARCHAR(100)
+);
+
+CREATE TABLE DISCIPLINA (
+    IdDisciplian INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
+    nomeDisciplina VARCHAR(50),
+    ano VARCHAR(50) UNIQUE
+);
+
+CREATE TABLE PLANO (
+    idPlano INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
+    nomePlano VARCHAR(50),    
+    idDisciplina INTEGER,
+    FOREIGN KEY (idDisciplina)
+	REFERENCES PROFESSOR(idDisciplina),
+    idProfessor INTEGER,
+    FOREIGN KEY (idProfessor)
+	REFERENCES PROFESSOR(idProfessor)
+);
+ 
